@@ -1,0 +1,191 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Bootstarp handson</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet" >
+    </head>
+    <body>
+        <!--Header part start-->
+        <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+            <div class="container">
+                <a class="nav-brand"><img src="images/logo_horizontal.png"></a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="navbar-toggler-icon">Show menu</span>
+                </button>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Connect</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--Header part end-->
+
+        <!--Carusol part start-->
+        <div id="slides" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#slides" data-slide-to="0" class="active" ></li>
+                <li data-target="#slides" data-slide-to="1"></li>
+                <li data-target="#slides" data-slide-to="2"></li>
+            </ul>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./images/img4.jpg" width="100%" height="100%">
+                    <div class="carousel-caption">
+                        <h1 class="display-2">Bootstarp</h1>
+                        <h3>Sample Bootstarp Page</h3>
+                        <button type="button" class="btn btn-outline-light btn-lg">View Demo</button>
+                        <button type="button" class="btn btn-primary">Get started</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/img5.jpg" width="100%" height="100%">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/img6.jpg" width="100%" height="100%">
+                </div>
+            </div>
+        </div>    
+        <!--Carusol part end-->
+        <!---Jumbotron starts-->
+        <div class="container-fluid">
+            <div class="row jumbotron">
+                <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+                    <p class="lead">
+                        A blockchain, originally block chain, is a growing list of records, called blocks, that are linked using cryptography. ... By design, a blockchain is resistant to modification of the data. It is "an open, distributed ledger that can record transactions between two parties efficiently and in a verifiable and permanent way".
+                    </p>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
+                    <a href="#">
+                        <button type="button" class="btn btn-outline-secondary btn-lg">Bit Coins</button>
+                    </a>
+                    <ul class="people"></ul>
+                </div>
+            </div>
+        </div>
+        <!---Jumbotron ends-->
+        <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <a class="dropdown-item" href="#">Dropdown succ link1</a>
+              <a class="dropdown-item" href="#">Dropdown err link2</a>
+              <a class="dropdown-item" href="#">Dropdown succ link3</a><a class="dropdown-item" href="#">Dropdown succ link4</a><a class="dropdown-item" href="#">Dropdown err link5</a><a class="dropdown-item" href="#">Dropdown err link6</a><a class="dropdown-item" href="#">Dropdown succ link7</a><a class="dropdown-item" href="#">Dropdown err link8</a>
+            </div>
+          </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>
+
+<script>
+    const calcArea = radius => 3.14* radius**2;
+    console.log(calcArea(6));
+
+    // const greet = function(){
+    //     return "Hello World from function expression";
+    // }
+    const greet = () => "hello world from arrow function";
+    console.log(greet());
+
+    // const bill = function(product, tax){
+    //     let total = 0;
+    //     for(let i=0; i<product.length; i++){
+    //         total+= product[i] + product[i] * tax;
+    //     }
+    //     return total;
+    // }
+    
+
+    const bill = (product, tax) =>{
+        let total = 0;
+        for(let i=0; i<product.length; i++){
+            total += product[i] + product[i] * tax;
+        }
+        return total;
+    }
+    console.log(bill([100,209,390,289],20));
+
+    let people = ['gokila','kalai','indhu','laks','balu'];
+    let html = ``;
+    const logPerson = (person,index) => {
+
+        html +=`<li style="color:green;">${index} - hello ${person}</li>`;
+    };
+    people.forEach(logPerson);
+    const ul = document.querySelector(".people");
+    ul.innerHTML = html;
+
+
+    //JS objects 
+    let user = {
+        name: "Gokila",
+        email: "gokiindu@gmail.com",
+        mobileNo: "7898999989",
+        blogs: [
+            {
+                title: "Title one" ,likes: 30,
+            },{
+                
+                title: "Title two" ,likes: 50,
+            }
+        ],
+        author: "Gokila",
+        login(){
+            console.log("User logged in");
+        },
+        logout(){
+            console.log("user logged out");
+        },
+        logBlogs(){
+            this.blogs.forEach( (blog,index) => console.log(`Blog title ${blog.title} has ${blog.likes} likes. Index `, index));
+        }
+    };
+    user.login();
+    user.logBlogs();
+    user.logout();
+
+    const att = document.querySelector('a.dropdown-item');
+    console.log(att);
+    const attOfA = att.getAttribute('href');
+    console.log(attOfA);
+    att.setAttribute('href',"www.google.com");
+
+    const allAElem = document.querySelectorAll('a.dropdown-item');
+    allAElem.forEach( aElem =>{
+        const cList = (aElem.innerHTML.includes('succ'))? aElem.classList.add('success'):aElem.classList.add('error');
+         
+        // cList.forEach(className =>{
+        //     console.log(className);
+        // })
+        console.log(aElem.classList);
+    });
+</script>
+<style>
+    .success{
+        color: darkgreen;
+        border: darkgreen 1px dotted;
+    }
+    .error{
+        color: crimson;
+        border: crimson 1px dotted ;
+    }
+</style>
